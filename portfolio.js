@@ -20,17 +20,6 @@ menuToggle.addEventListener('click', () =>{
     showcase.classList.toggle('active')
 })
 
-// const hideMenuToggle = () => {
-//     const menuToggle = document.querySelector('.active')
-//     if(window.innerWidth <= 768 && menuToggle) {
-//         menuToggle.classList.toggle('active')
-//         menuLinks.classList.remove('active')
-//     }
-// }
-
-// menuLinks.addEventListener('click', hideMenuToggle)
-
-
 //Hamburger menu end
 
 //Typing animation
