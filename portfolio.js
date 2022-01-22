@@ -153,3 +153,27 @@ input.forEach(input => {
     input.addEventListener("focus", focusFunc);
     input.addEventListener("blur", blurFunc);
 });
+
+
+//Autoplay video on low power mode
+const videoElement = document.getElementById('video_id');
+ videoElement.addEventListener('suspend', () => {
+            // suspend invoked
+            // show play button
+        });
+
+        videoElement.addEventListener('play', () => {
+            // video is played
+            // remove play button UI
+        });
+$('body').on('click touchstart', function () {
+            const videoElement = document.getElementById('video_id');
+            if (videoElement.playing) {
+                // video is already playing so do nothing
+            }
+            else {
+                // video is not playing
+                // so play video now
+                videoElement.play();
+            }
+    });
