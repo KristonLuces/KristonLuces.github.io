@@ -145,6 +145,13 @@ input.forEach(input => {
 
 
 //Autoplay video on low power mode
+
+Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+    get: function () {
+        return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+    }
+});
+
 const videoElement = document.getElementById('video_id');
  videoElement.addEventListener('suspend', () => {
             // suspend invoked
@@ -155,6 +162,7 @@ const videoElement = document.getElementById('video_id');
             // video is played
             // remove play button UI
         });
+
 $('body').on('click touchstart', function () {
             const videoElement = document.getElementById('video_id');
             if (videoElement.playing) {
